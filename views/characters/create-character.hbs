@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <h1>New character</h1>
+
+                <hr>
+
+                <form action="/characters/create" method="POST">
+                    <label>
+                        Name: <input type="text" name="name" placeholder="Name">
+                    </label>
+
+                    <label>
+                        Occupation: <input type="text" name="occupation" placeholder="Occupation">
+                    </label>
+
+                    <label>
+                        Weapon: <input type="text" name="weapon" placeholder="Weapon">
+                    </label>
+                    
+                    <div>
+                      <p>Debt:</p>
+                      <label for="debtChoice1">True</label>
+                      <input type="radio" id="debtChoice1" name="debt" value="true">
+
+                      <label for="debtChoice2">False</label>
+                      <input type="radio" id="debtChoice2" name="debt" value="false">
+                    </div>
+
+                    <br>
+
+                    <input type="submit" value="Create character" class="btn-dark btn">
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
