@@ -1,0 +1,33 @@
+<h1>Edit
+  {{charInfo.data.name}}
+</h1>
+
+<form action='/characters/{{charInfo.data.id}}/update' method='POST'>
+  <label for='charName'> </label>
+  Name:
+  {{!  name is whats being sent to the body as a key value attribute  key is name and value is whatever is typed in the input}}
+  <input id='charName' type='text' name='name' value='{{charInfo.data.name}}' />
+
+  <label for='charOccupation'> </label>
+  Occupation:
+  <input
+    id='charOccupation'
+    type='text'
+    name='occupation'
+    value='{{charInfo.data.occupation}}'
+  />
+
+  <label for='charWeapon'> </label>
+  Weapon:
+  <input
+    id='charWeapon'
+    type='text'
+    name='weapon'
+    value='{{charInfo.data.weapon}}'
+  />
+
+  <label for='charDebt'> </label>
+  Debt:
+  <input id='charDebt' type='text' name='debt' value='{{charInfo.data.debt}}' />
+  <input type='submit' value='Update character' />
+</form>
