@@ -1,0 +1,24 @@
+<h2>CELEBRITY</h2>
+
+<form action='/characters/create' method='POST'>
+
+  {{!  if we dont wrap divs around these they go left to right, otherwise if we put divs then we go top to bottom }}
+  <label for='charName'> </label>
+  Celebrity:
+  {{!  name is whats being sent to the body as a key value attribute  key is name and value is whatever is typed in the input}}
+  <input id='charName' type='text' name='name' />
+
+  <label for='charOccupation'> </label>
+  Occupation:
+  <input id='charOccupation' type='text' name='occupation' />
+
+  <label for='charWeapon'> </label>
+  Catchphrase:
+  <input id='charWeapon' type='text' name='weapon' />
+
+  <label for='charDebt'> </label>
+  Catchphrase:
+  <input id='charDebt' type='text' name='debt' />
+
+  <button type='submit'>Submit</button>
+</form>
