@@ -1,0 +1,25 @@
+<h2>Edit {{ character.name }}</h2>
+
+<form action="/characters/{{character.id}}/update/" method="POST">
+<label>Name
+    <input type="text" name="name" value="{{character.name}}">
+</label>
+
+<label>Occupation
+    <input type="text" name="occupation" value="{{character.occupation}}">
+</label>
+
+<label>Weapon
+    <input type="text" name="weapon" value="{{ character.weapon }}">
+</label>
+<br />
+Debt?
+<label>Yes
+    <input type="radio" name="debt" {{character.debtTrue}} value="true">
+</label>
+<label>No
+    <input type="radio" name="debt" {{character.debtFalse}} value="false">
+</label>
+<button type="submit">Update</button>
+</form>
+<a href="/characters/{{character.id}}/delete">Delete</a>
