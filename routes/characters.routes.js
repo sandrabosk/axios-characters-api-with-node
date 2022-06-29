@@ -1,27 +1,46 @@
 const router = require("express").Router();
-const axios = require("axios");
 
-/* GET home page */
-router.get("/characters", (req, res, next) => {
-    axios.get("https://ih-crud-api.herokuapp.com/characters")
-    .then(responseFromAPI => {
-        // console.log(responseFromAPI)
-        res.render("characters/list-characters", { characters: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+const { response } = require("express");
+const charactersService = require('./../services/characters.service')
 
 
-router.get("/characters/:id", (req, res, next) => {
-    axios.get(`https://ih-crud-api.herokuapp.com/characters/${req.params.id}`)
-    .then(responseFromAPI => {
-        // console.log("details: ", responseFromAPI.data)
-        res.render("characters/details-character", { character: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+router.get('/characters', (req, res, next) => {
+
+    charactersService
+        .getAllCharacters()
+        .then(response => res.render('characters/list-characters', { characters: response.data }))
+
+})
+
+router.get('/characters/:id', (req, res, next) => {
+
+    charactersService
+
+        .getOneCharacter(req.params.id)
+        .then(response => {            
+            res.render('characters/details-character', { character: response.data })})
+        .catch(err => console.log(err))
+
+})
+
+
+router.get('/characters/create', (req, res) => {
+    res.render('character/new-character', {character: response.data} )
+})
+
+
+
+router.post('/characters/create', (req, res) => {
+
+    const { name, weapon, occupation } = req.body
+
+    const characterData = { name, weapon, occupation }
+
+    charactersService
+
+        .saveCharacter(characterData)
+        .then(response => res.redirect('/character'))
+        .catch(err => console.log(err))
+})
 
 module.exports = router;
-
-
-// https://ih-crud-api.herokuapp.com/characters
