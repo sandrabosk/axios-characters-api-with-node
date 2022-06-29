@@ -28,14 +28,6 @@ class CharactersService {
     }
     
     
-
-    // editCharacter(characterId, characterInfo) {
-    //     return this.api.put(`/characters/${characterId}`, characterInfo)
-    // }
-
-    // deleteCharacter(characterId) {
-    //     return this.api.delete(`/characters/${characterId}`)
-    // }
 }
 
 module.exports = new CharactersService()
