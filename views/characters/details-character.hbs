@@ -1,6 +1,12 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container">
+    <h2>Details of {{ character.name }}</h2>
 
 
-<h3> Occupation: {{ character.occupation }} </h3>
+    <h3> Occupation: {{ character.occupation }} </h3>
 
-<p> Weapon: {{ character.weapon }} </p>
+    <p> Weapon: {{ character.weapon }} </p>
+
+    {{#if character.debt}}
+    <p>Has debt</p>
+    {{/if}}
+</div>
