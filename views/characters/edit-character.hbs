@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Edit character</h2>
+
+    <form action="/characters/update/{{id}}" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+
+        </div>
+        <div class="mb-3">
+            <label for="occupation" class="form-label">Occupation</label>
+            <input type="text" class="form-control" id="occupation" name="occupation" value="{{occupation}}">
+
+        </div>
+
+        <div class="mb-3 form-check">
+            <label class="form-check-label" for="debt">
+                Has Debt
+            </label>
+            {{#if debt}}
+            <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" name="debt" checked>
+            {{/if}}
+            {{#unless debt}}
+            <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" name="debt">
+            {{/unless}}
+        </div>
+
+        <div class="mb-3">
+            <label for="weapon" class="form-label">Weapon</label>
+            <input type="text" class="form-control" id="weapon" name="weapon" value="{{weapon}}">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
