@@ -1,7 +1,14 @@
 <h2> Characters List </h2>
 
+<a href="/create">Crea un personaje</a>
+
+<br>
 <ul>
     {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    <li>
+        <a href="/characters/{{id}}"> {{ name }} </a>
+        <a href="/characters/{{id}}/delete">Delete</a>
+    </li>
     {{/each}}
+
 </ul>
