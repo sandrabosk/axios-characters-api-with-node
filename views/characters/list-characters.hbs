@@ -1,7 +1,26 @@
-<h2> Characters List </h2>
+<div class="container">
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+
+    <h1>Characters list</h1>
+    <hr>
+
+    <div class="row">
+
+        {{#each characters}}
+        <div class="col-md-4">
+            <article>
+                <h2>{{name}} <small>(ID {{id}})</small></h2>
+                <hr>
+                <p>Occupation: {{occupation}}</p>
+                <p>Weapon: {{weapon}}</p>
+                <div class="btn-group" style="width: 100%">
+                    <a href="/characters/{{id}}/edit" class="btn btn-outline-dark btn-sm">Edit character</a>
+                    <a href="/characters/{{id}}/delete" class="btn btn-dark btn-sm">Delete character</a>
+                </div>
+            </article>
+        </div>
+        {{/each}}
+
+    </div>
+
+</div>
