@@ -28,6 +28,8 @@ app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 const index = require("./routes/index.routes");
 app.use("/", index);
 
+
+//Aquí está requerida la ruta de characters
 const charactersRoutes = require("./routes/characters.routes");
 app.use("/", charactersRoutes);
 
