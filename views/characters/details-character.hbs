@@ -5,18 +5,8 @@
 
 <p> Weapon: {{ character.weapon }} </p>
 
-<form action="/characters/{{id}}/edit" method="POST">
-    <label>
-        Name: <input type="text" name="name" value="{{character.name}}">
-    </label>
 
-    <label>
-        Occupation: <input type="text" name="occupation" value="{{character.occupation}}">
-    </label>
+<a href="/characters/{{character.id}}/edit">Editar</a>
 
-    <label>
-        Weapon: <input type="text" name="weapon" value="{{character.weapon}}">
-    </label>
-
-    <input type="submit" value="Update character" class="btn-dark btn">
+<a href="/characters/{{character.id}}/delete">Eliminar</a>
 </form>

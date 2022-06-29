@@ -49,13 +49,13 @@ router.get('/characters/:id', (req, res) => {
 
 //Edit characters
 router.get('/characters/:id/edit', (req, res) => {
-    const { id } = req.params
+
 
     characersService
-        .getOneCharacter(id)
+        .getOneCharacter(req.params.id)
         .then(response => {
             const character = response.data
-            res.render('characters/edit-character', { character })
+            res.render('characters/edit-character', character)
         })
         .catch(err => console.log(err))
 })
@@ -64,8 +64,7 @@ router.post('/characters/:id/edit', (req, res) => {
 
 
     const { id } = req.params
-    const { name, occupation, weapon } = req.body
-    const newUpdate = { name, occupation, weapon, id }
+    const newUpdate = req.body
 
     characersService
         .editCharacter(id, newUpdate)
@@ -75,12 +74,12 @@ router.post('/characters/:id/edit', (req, res) => {
 })
 
 // Delete character
-router.post('/characters/:id/delete', (req, res) => {
+router.get('/characters/:id/delete', (req, res) => {
 
-    const { character_id } = req.params
+    const { id } = req.params
 
     characersService
-        .deleteCharacter(character_id)
+        .deleteCharacter(id)
         .then(response => res.redirect('/characters-list'))
         .catch(err => console.log(err))
 })
