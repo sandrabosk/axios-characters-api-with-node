@@ -1,6 +1,13 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container">
+    <h2>Details of {{ character.name }}</h2>
 
+    <h3> Trabajo: {{ character.occupation }} </h3>
 
-<h3> Occupation: {{ character.occupation }} </h3>
+    <h3> Deuda: {{character.debt}}</h3>
 
-<p> Weapon: {{ character.weapon }} </p>
+    <p> Weapon: {{ character.weapon }} </p>
+
+    <a href="/characters/{{character.id}}/edit" class="btn btn-primary">Edítame, bebé</a>
+    <a href="/characters/{{character.id}}/delete" class="btn btn-danger">Bórrame bebé</a>
+
+</div>

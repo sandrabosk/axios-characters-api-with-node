@@ -1,0 +1,40 @@
+<div class="container create-form">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <h1 class="create-main-title">Edita tu Personaje</h1>
+
+            <hr>
+
+            <form action="/characters/{{id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label"><i>Nombre</i></label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="occupation" class="form-label"><i>Trabajo</i></label>
+                    <input type="text" class="form-control" id="occupation" name="occupation" value="{{occupation}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="debt" class="form-label"><i>Deuda</i></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{debt}}" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked"></label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="weapon" class="form-label"><i>Arma</i></label>
+                    <input type="text" class="form-control" id="weapon" name="weapon" value="{{weapon}}">
+                </div>
+
+                <button type="submit" class="btn btn-dark submit-link">Enviar</button>
+            </form>
+
+        </div>
+    </div>
+</div>
