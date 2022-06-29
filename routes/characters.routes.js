@@ -1,27 +1,83 @@
 const router = require("express").Router();
-const axios = require("axios");
+
+const { response } = require("express");
+const charactersService = require("./../services/characters.service");
+const CharactersService = require('./../services/characters.service')
+
+
 
 /* GET home page */
-router.get("/characters", (req, res, next) => {
-    axios.get("https://ih-crud-api.herokuapp.com/characters")
-    .then(responseFromAPI => {
-        // console.log(responseFromAPI)
-        res.render("characters/list-characters", { characters: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+router.get('/characters-list', (req, res) => {
 
+    CharactersService
+        .getAllCharacters()
+        .then(response => res.render('characters/list-characters', { characters: response.data }))
+        .catch(err => console.error(err))
+})
 
-router.get("/characters/:id", (req, res, next) => {
-    axios.get(`https://ih-crud-api.herokuapp.com/characters/${req.params.id}`)
-    .then(responseFromAPI => {
-        // console.log("details: ", responseFromAPI.data)
-        res.render("characters/details-character", { character: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+//create character
+router.get('/characters/create', (req, res) => {
+    res.render('characters/create-character')
+})
 
-module.exports = router;
+router.post('/characters/create', (req, res) => {
 
+    const { name, weapon, occupation } = req.body
+    const characterData = { name, weapon, occupation }
 
-// https://ih-crud-api.herokuapp.com/characters
+    CharactersService
+        .saveCharacters(characterData)
+        .then(response => res.redirect('/characters-list'))
+        .catch(err => console.log(err))
+
+})
+
+//character details
+router.get('/characters/:character_id', (req, res, next) => {
+
+    CharactersService
+        .getOneCharacters(req.params.character_id)
+        .then(response => {
+            const character = response.data
+            res.render('characters/details-character', character)
+        })
+        .catch(err => console.error(err))
+})
+
+//edit character
+router.get('/characters/:character_id/edit', (req, res) => {
+
+    const { character_id } = req.params
+
+    CharactersService
+        .getOneCharacters(character_id)
+        .then(response => {
+            const character = response.data
+            res.render('characters/edit-character', character)
+        })
+        .catch(err => console.log(err))
+})
+
+router.post('/characters/:character_id/edit', (req, res) => {
+    
+    const { character_id } = req.params
+    const newCharacterData = req.body
+
+    charactersService
+        .editCharacters(character_id, newCharacterData)
+        .then(response => res.redirect('/characters-list'))
+        .catch(err => console.log(err))
+})
+
+//delete characters
+router.get('/characters/:character_id/delete', (req, res) => {
+
+    const { character_id } = req.params
+
+    charactersService
+        .deleteCharacters(character_id)
+        .then(response => res.redirect('/characters-list'))
+        .catch(err => console.log(err))
+})
+
+module.exports = router
