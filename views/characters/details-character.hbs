@@ -1,6 +1,12 @@
-<h2>Details of {{ character.name }}</h2>
+<dv class="container">
+    <h2>Details of {{ character.name }}</h2>
+    
+    <h2> Occupation: {{ character.occupation }} </h2>
+    
+    <h2> Weapon: {{ character.weapon }} </h2>
+    <a class="btn btn-dark btn-sm" href="/characters/{{character.id}}/edit">Edit</a>
+    <a class="btn btn-danger btn-sm" href="/characters/{{character.id}}/delete">Delete</a>
+
+</dv>
 
 
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>

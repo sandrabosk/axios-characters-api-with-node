@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="mt-5 row justify-content-center">
+        <div class="col-4">
+            <form action="/characters/{{id}}/edit" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input type="text" class="form-control" id="occupation" name="occupation" value="{{occupation}}">
+                </div>
+                <div class="mb-3">
+                    <label for="weapon" class="form-label">Weapon</label>
+                    <input type="text" class="form-control" id="weapon" name="weapon" value="{{weapon}}">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
