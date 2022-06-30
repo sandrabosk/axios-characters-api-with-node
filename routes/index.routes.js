@@ -5,4 +5,7 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
+const charactersRouter = require("./characters.routes")
+router.use("/", charactersRouter)
+
 module.exports = router;
