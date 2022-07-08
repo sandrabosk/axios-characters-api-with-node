@@ -1,0 +1,22 @@
+<h2>Edit the character  {{ responseFromAPI.data.name }}</h2>
+
+<form action="/characters/{{responseFromAPI.data.id}}/update" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="{{responseFromAPI.data.name}}" />
+  </label>
+
+  <label>
+    Occupation:
+    <input type="text" name="occupation" value="{{responseFromAPI.data.occupation}}" />
+  </label>
+
+  <label>
+    Weapon:
+    <textarea name="weapon">{{responseFromAPI.data.weapon}}</textarea>
+  </label>
+
+  <label> Debt: <textarea name= "debt">{{responseFromAPI.data.debt}}</textarea> </label>
+
+  <button type="submit">Save changes</button>
+</form>
