@@ -35,12 +35,11 @@ router.post('/characters/create', (req, res, next) =>{
     axios.post('https://ih-crud-api.herokuapp.com/characters', {name, occupation, weapon, debt})
     .then(responseFromAPI =>{
         Character.create({name, occupation, weapon, debt})
-        res.redirect('/characters-list')
+        res.redirect('/characters')
     })
     .catch(err => console.error(err))
 
 });
-
 
 // Update a character
 // Create GET route /characters/:id/edit in the characters.routes.js file and render the edit-character.hbs page on it.
