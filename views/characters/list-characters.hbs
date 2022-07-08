@@ -3,5 +3,7 @@
 <ul>
     {{#each characters }}
         <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+        <a href="/characters/{{id}}/edit" class="btn btn-outline-dark btn-sm">Edit character</a>
+        <a href="/characters/{{id}}/delete" class="btn btn-dark btn-sm">Delete character</a>
     {{/each}}
 </ul>
