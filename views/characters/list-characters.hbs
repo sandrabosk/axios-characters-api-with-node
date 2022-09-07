@@ -2,6 +2,10 @@
 
 <ul>
     {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    <h2> <a href="/characters/{{id}}"> {{ name }} </a></h2> {{!-- //Este characters accede a la url(sin el heroapi
+    delante) --}}
+    <li> <a href="characters/delete/{{id}}">Delete</a></li>
     {{/each}}
 </ul>
+
+<a href="/characters/create" class="btn btn-warning"> Create </a>
