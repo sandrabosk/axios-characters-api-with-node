@@ -1,0 +1,27 @@
+<div class="container mt-5 form">
+    <h2>Edit {{name}}</h2>
+    <form action="/characters/{{id}}/edit" method="POST">
+        <div class="mb-3">
+            <label for="" class="form-label">New name</label>
+            <input type="text" class="form-control text-muted" name="name" value="{{name}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">New occupation</label>
+            <input type="text" class="form-control text-muted" name="occupation" value="{{occupation}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">New weapon</label>
+            <input type="text" class="form-control text-muted" name="weapon" value="{{weapon}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Debt</label>
+            <input type="checkbox" class="form-control text-muted" name="debt" value="true">
+        </div>
+
+        <div class=" d-grid gap-2">
+            <button type="submit" class="btn btn-dark block">Save</button>
+        </div>
+</div>
