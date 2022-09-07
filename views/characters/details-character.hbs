@@ -1,6 +1,22 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container center mt-5 d-flex justify-content-center" style="max-width: 900px;">
+    <div class="row">
 
+        <div class="card mb-3">
+            <div class="row g-0 p-3">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{{character.name}}</h2>
+                        <p class="card-text"><strong>Occupation:</strong> {{character.occupation}}</p>
+                        <p class="card-text"><strong>Weapon:</strong> {{character.weapon}}</p>
+                        <p class="card-text"><strong>Debt:</strong> {{ character.debt }}</p>
+                        <div class="mt-4 d-flex flex-row">
+                            <a class="btn btn-dark me-2" href="/characters/update/{{ character.id }}">Update</a>
+                            <a class="btn btn-danger" href="/characters/delete/{{ character.id }}">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+    </div>
+</div>
