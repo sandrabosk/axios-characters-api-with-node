@@ -1,0 +1,12 @@
+<h1>Personajes</h1>
+
+{{#each characters}}
+<ul>
+    <li>{{name}}</li>
+    <li>Trabajo: {{occupation}}</li>
+    <li>Arma: {{weapon}}</li>
+    <a href="/characters/{{id}}">DETALLITOS</a>
+    <a href="/characters/delete/{{id}}">ELIMINAR!!</a>
+    <a href="/characters/update/{{id}}">Actualizar informaçao</a>
+</ul>
+{{/each}}
