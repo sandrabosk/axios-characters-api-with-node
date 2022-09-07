@@ -1,0 +1,28 @@
+<h1>estas en edit</h1>
+
+<form action='/characters/{{id}}/edit' method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" name="name" value="{{name}}" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">occupation</label>
+        <input type="text" name="occupation" value="{{occupation}}" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Debt</label>
+        <input type="text" name="debt" value="{{debt}}" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Weapon</label>
+        <input type="text" name="weapon" value="{{weapon}}" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
