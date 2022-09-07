@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Edit the Character</h2>
+    <div class="col-6">
+        <div class="row">
+            <form action="/characters/{{id}}/edit" method="post">
+                <div class="row m-5">
+                    <label for="">Name</label>
+                    <input type="string" name="name" value="{{name}}">
+                </div>
+                <div class="row m-5">
+                    <label for="">Occupation</label>
+                    <input type="text" name="occupation" value="{{occupation}}">
+                </div>
+                <div class="row m-5">
+                    <select name="debt">
+                        <option disabled selected>{{debt}}</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <div class="row m-5">
+                    <label for="">Weapon</label>
+                    <input type="text" name="weapon" value="{{weapon}}">
+                </div>
+
+                {{!-- <input type=" text" name="user" value="{{_id}}">
+                --}}
+                <button class="btn btn-secondary m-5" type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
