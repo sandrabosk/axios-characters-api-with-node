@@ -1,6 +1,11 @@
-<h2>Details of {{ character.name }}</h2>
+<h2>Details of {{ name }}</h2>
 
 
-<h3> Occupation: {{ character.occupation }} </h3>
+<h3> Occupation: {{ occupation }} </h3>
 
-<p> Weapon: {{ character.weapon }} </p>
+<p> Weapon: {{ weapon }} </p>
+
+<a href="/characters/{{id}}/edit">Edit Character</a>
+<br>
+<br>
+<a href="/characters/{{id}}/delete">Delete Character</a>
