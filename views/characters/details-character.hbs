@@ -1,6 +1,18 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container">
+    <div class="row mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{name }}</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> Occupation: {{occupation }}</li>
+                <li class="list-group-item">Weapon: {{weapon }}</li>
+            </ul>
+        </div>
+    </div>
+    <form action="/characters/delete/{{id}}" method="GET">
+        <button class="btn btn-danger mt-3" type="submit">Delete Student</button>
+    </form>
+    <a href="/characters/{{id}}/edit" class="btn btn-primary mt-3">Update</a>
 
-
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+</div>
