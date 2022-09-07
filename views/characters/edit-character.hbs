@@ -1,0 +1,23 @@
+<form action="/characters/{{character.id}}/edit" method="post"> /{{!--TIENE QUE TENER EL MISMO NOMBRE DEL POST AL QUE
+    REFERENCIA
+    --}}
+
+    <label for="name">Name</label>
+    <input type="text" name="name">
+
+    <label class="ml-2" for="occupation">Occupation</label>
+    <input type="text" name="occupation">
+
+    {{!-- <label for="debt">Debt</label>
+    <input type="text" name="debt"> --}}
+    <select>
+        <option value="false" name="debt">false</option>
+        <option value="true" name="debt">true</option>
+    </select>
+
+    <label for="weapon">Weapon</label>
+    <input type="text" name="weapon">
+
+    <button class="btn btn-primary" type="submit">Create Character</button>
+
+</form>
