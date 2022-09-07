@@ -1,6 +1,19 @@
 <h2>Details of {{ character.name }}</h2>
+<div class="card w-50">
+    <div class="card-body">
+        <h5 class="card-title">{{ character.name }}</h5>
+        <p class="card-text">
+        <h3> Occupation: {{ character.occupation }} </h3>
 
+        <p> Weapon: {{ character.weapon }} </p>
 
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+        <div class="mb-3 ">
+            <label><input type="checkbox" disabled id="cbox1" value="debt" name="debtInput" {{#if
+                    character.debt}}checked{{/if}}>
+                Debt</label>
+        </div>
+        </p>
+        <a href="/characters/{{character.id}}/delete" class="btn btn-danger">DELETE</a>
+        <a href="/characters/{{character.id}}/edit" class="btn btn-primary">EDIT</a>
+    </div>
+</div>
