@@ -1,7 +1,24 @@
-<h2> Characters List </h2>
+<div class="container">
+    <div class="row">
+        <h1>Characters List</h1>
+        {{#each characters}}
+        <div class="card me-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{occupation}}</p>
+                <p class="card-text">{{weapon}}</p>
+                <a href="/characters/{{id}}" class="btn btn-dark">{{ name }}</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{!-- <h2> Characters List</h2>
+
 
 <ul>
     {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    <li> <a href="/characters/{{id}}">{{ name }} </a></li>
     {{/each}}
-</ul>
+</ul> --}}
