@@ -1,0 +1,20 @@
+<form class="editForm" action="/characters/{{character.id}}/update" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value={{character.name}}>
+    <br>
+    <label for="occupation">Occupation:</label>
+    <input type="text" name="occupation" value={{character.occupation}}>
+    <br>
+    <label for="debt">Debt:</label>
+    {{#if character.debt}}
+        <input type="checkbox" name="debt" checked>
+    {{/if}}
+    {{#unless character.debt}}
+        <input type="checkbox" name="debt">
+    {{/unless}}
+    <br>
+    <label for="weapon">Weapon:</label>
+    <input type="text" name="weapon" value={{character.weapon}}>
+    <br>
+    <button type="submit">Submit</button>
+</form>
