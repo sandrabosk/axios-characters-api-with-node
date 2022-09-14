@@ -4,3 +4,31 @@
 <h3> Occupation: {{ character.occupation }} </h3>
 
 <p> Weapon: {{ character.weapon }} </p>
+
+<h1>Edit Character</h1>
+<form method="post" action="/characters/{{character.id}}/update">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Occupation:</label>
+    <input type="text" name="occupation">
+    <label>Debt:</label>   
+     <select name="debt" id='debt'>
+        <option value="true">true</option>>
+        <option value="false">false</option>
+    </select>
+     <label>Weapon:</label>
+    <input type="text" name="weapon">
+    <button type="submit">Submit</button>
+</form>
+
+<h1>Retype to delete</h1>
+<form method="post" action="/characters/{{character.id}}/delete">
+    <input type="text" name="name" placeholder="{{character.name}}">
+    <input type="text" name="occupation" placeholder="{{character.occupation}}">
+    <select name="text" name="debt">
+        <option value="true">true</option>
+        <option value="false">false</option>
+    </select>
+    <input type="text" name="weapon" placeholder="{{character.weapon}}">
+    <button type="submit">Delete Character</button>
+</form>
