@@ -1,0 +1,21 @@
+<div class="container">
+	<h2 class="mb-4">Detalles de {{character.name}}</h2>
+	<div class="row">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="my-3 card-title">{{character.name}}</h5>
+				<ul class="card-text">
+					<li> <strong>Profesión:</strong> {{character.occupation}} </li>
+					<li> <strong>Arma:</strong> {{character.weapon}} </li>
+
+				</ul>
+				<div class="mb-3">
+					<label><input type="checkbox" disabled id="cbox1" value="debt" name="debtInput" />Deuda</label>
+
+				</div>
+				<a href="/characters/{{character.id}}/delete" class="btn btn-danger">Borrar</a>
+				<a href="/characters/{{character.id}}/edit" class="btn btn-warning">Editar</a>
+			</div>
+		</div>
+	</div>
+</div>
