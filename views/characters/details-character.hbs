@@ -1,6 +1,8 @@
-<h2>Details of {{ character.name }}</h2>
-
-
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+<div class="container mt-5">
+    <h2>Nombre: {{ character.name }}</h2>
+    <h3> Ocupacion: {{ character.occupation }} </h3>
+    <h3> Arma: {{ character.weapon }} </h3>
+    <form action="/character/{{character.id}}/delete" method="post">
+        <input type="submit" value="Eliminar personaje" class="btn btn-danger" style="display: inline">
+    </form>
+</div>
