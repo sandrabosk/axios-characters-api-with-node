@@ -3,5 +3,7 @@
 <ul>
     {{#each characters }}
         <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+        <a href="/characters/{{id}}/update" type="submit">EDITAR</a>
+        <hr>
     {{/each}}
 </ul>

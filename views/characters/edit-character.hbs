@@ -1,0 +1,26 @@
+
+
+<h1>EDIT CHARACTER</h1>
+<hr>
+
+ <form action="/characters/{{id}}/update" method="POST">
+
+                <div>
+                    <label for="name" class="form-label">Character Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                </div>
+
+                <div>
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input type="text" class="form-control" id="occupation" name="occupation" value="{{occupation}}">
+                </div>
+
+                <div>
+                    <label for="weapon" class="form-label">Weapon</label>
+                    <input type="text" class="form-control" id="weapon" name="weapon" value="{{weapon}}">
+                </div>
+
+                <button type="submit">Enviar</button>
+                
+
+            </form>
