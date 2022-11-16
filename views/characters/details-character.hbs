@@ -4,3 +4,8 @@
 <h3> Occupation: {{ character.occupation }} </h3>
 
 <p> Weapon: {{ character.weapon }} </p>
+
+<a href="/characters/{{ character.id }}/edit">Edit</a>
+<form action="/characters/{{ character.id }}/delete" method="POST" style="display: inline">
+  <input type="submit" value="Delete" class="btn btn-danger">
+</form>
