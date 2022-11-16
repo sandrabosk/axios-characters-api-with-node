@@ -29,15 +29,7 @@ router.post("/create", (req, res, next) => {
         .catch(err => console.log(err))
 });
 
-/* ID page */
-router.get("/characters/:id", (req, res, next) => {
-    console.log('hola')
-    axios.get(`https://ih-crud-api.herokuapp.com/characters/${req.params.id}`)
-        .then(responseFromAPI => {
-            res.render("characters/details-character", { character: responseFromAPI.data });
-        })
-        .catch(err => console.error(err))
-});
+
 
 /* EDIT page */
 router.get("/characters/:characters_id/edit", (req, res, next) => {
