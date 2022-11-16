@@ -1,0 +1,37 @@
+<div class="container">
+
+	<div class="row justify-content-center">
+
+		<div class="col-md-8">
+
+			<h1>Nuevo personaje</h1>
+
+			<form action="/characters/create" method="POST">
+
+				<div class="mb-3">
+					<label for="name" class="form-label">Nombre</label>
+					<input type="text" class="form-control" id="name" name="name" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label for="occupation" class="form-label">Profesión</label>
+					<input type="text" class="form-control" id="occupation" name="occupation" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label for="weapon" class="form-label">Arma</label>
+					<input type="text" class="form-control" id="weapon" name="weapon" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label><input type="checkbox" id="debt" value="debt" name="debt" /> Deuda</label>
+				</div>
+
+				<div class="d-grid gap-2 m-2">
+					<button type="submit" class="btn btn-dark block">Crear personaje</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>

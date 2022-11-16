@@ -1,27 +1,74 @@
-const router = require("express").Router();
-const axios = require("axios");
+const express = require("express");
+const router = express.Router();
 
-/* GET home page */
-router.get("/characters", (req, res, next) => {
-    axios.get("https://ih-crud-api.herokuapp.com/characters")
-    .then(responseFromAPI => {
-        // console.log(responseFromAPI)
-        res.render("characters/list-characters", { characters: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
+const characterApi = require("../services/character-service");
+const characterService = new characterApi();
+
+// Characters list
+router.get("/characters", (req, res) => {
+	characterService
+		.listCharacters()
+		.then((characters) => res.render("characters/list-characters", { characters }))
+		.catch((err) => console.log(err));
 });
 
+// Create new character
+router.get("/characters/create", (req, res, next) => {
+	res.render("characters/create-characters");
+});
 
-router.get("/characters/:id", (req, res, next) => {
-    axios.get(`https://ih-crud-api.herokuapp.com/characters/${req.params.id}`)
-    .then(responseFromAPI => {
-        // console.log("details: ", responseFromAPI.data)
-        res.render("characters/details-character", { character: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
+router.post("/characters/create", (req, res) => {
+	const { name, occupation, debt, weapon } = req.body;
+
+	characterService
+		.createCharacter({ name, occupation, debt, weapon })
+		.then(() => res.redirect("/characters"))
+		.catch((err) => console.log(err));
+});
+
+// Character details
+router.get("/characters/:id", (req, res) => {
+	const { id: character_id } = req.params;
+
+	characterService
+		.getCharacterDetails(character_id)
+		.then((character) => {
+			res.render("characters/details-characters", { character });
+		})
+		.catch((err) => console.log(err));
+});
+
+// Character delete
+router.get("/characters/:id/delete", (req, res, next) => {
+	const { id: character_id } = req.params;
+
+	characterService
+		.deleteCharacter(character_id)
+		.then(() => res.redirect("/characters"))
+		.catch((err) => next(err));
+});
+
+// Character edit
+router.get("/characters/:id/edit", (req, res, next) => {
+	const { id: character_id } = req.params;
+
+	characterService
+		.getCharacterDetails(character_id)
+		.then((details) => {
+			res.render("characters/edit-characters", details);
+		})
+		.catch((err) => next(err));
+});
+
+router.post("/characters/:id/edit", (req, res, next) => {
+	const { id: character_id } = req.params;
+
+	const { name, occupation, debt, weapon } = req.body;
+
+	characterService
+		.editCharacter(character_id, { name, occupation, debt, weapon })
+		.then(() => res.redirect(`/characters/${character_id}`))
+		.catch((err) => next(err));
 });
 
 module.exports = router;
-
-
-// https://ih-crud-api.herokuapp.com/characters

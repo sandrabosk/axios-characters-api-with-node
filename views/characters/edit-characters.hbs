@@ -1,0 +1,38 @@
+<div class="container">
+
+	<div class="row justify-content-center">
+
+		<div class="col-md-8">
+
+			<h1>Editar personaje</h1>
+			<hr />
+
+			<form action="/characters/{{id}}/edit" method="POST">
+
+				<div class="mb-3">
+					<label class="form-label">Nombre</label>
+					<input type="text" class="form-control" id="nameInput" name="name" value="{{name}}" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Profesión</label>
+					<input type="text" class="form-control" id="nameInput" name="occupation" value="{{occupation}}" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label for="emailInput" class="form-label">Arma</label>
+					<input type="text" class="form-control" id="nameInput" name="weapon" value="{{weapon}}" />
+					<div class="form-text">Requerido.</div>
+				</div>
+				<div class="mb-3">
+					<label><input type="checkbox" id="cbox1" value="debt" name="debtInput" />Deuda</label>
+				</div>
+
+				<div class="d-grid gap-2 m-2">
+					<button type="submit" class="btn btn-dark block">Actualizar personaje</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
