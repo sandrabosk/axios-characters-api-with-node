@@ -1,7 +1,14 @@
-<h2> Characters List </h2>
-
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+<div class="container">
+    <h2>Characters List</h2>
+    <hr>
+    <div class="d-flex flex-wrap justifycontent-center">
+        {{#each characters}}
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <a href="/characters/{{id}}" class="btn btn-dark">Info</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
