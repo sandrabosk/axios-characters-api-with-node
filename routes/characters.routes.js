@@ -1,27 +1,76 @@
-const router = require("express").Router();
-const axios = require("axios");
+const router = require("express").Router()
+const axios = require("axios")
+const { Router } = require("express")
 
-/* GET home page */
-router.get("/characters", (req, res, next) => {
-    axios.get("https://ih-crud-api.herokuapp.com/characters")
-    .then(responseFromAPI => {
-        // console.log(responseFromAPI)
-        res.render("characters/list-characters", { characters: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
+const AxiosLabAPI = require('../connect/axiosLab.connect')
+const axiosLabAPI = new AxiosLabAPI()
+
+//--------------------------------------GET---------------------------------//
+
+router.get("/list", (req, res, next) => {
+    axiosLabAPI
+        .getCharacters()
+        .then((responseFromAPI) =>
+            res.render('characters/list-characters', { characters: responseFromAPI.data }))
+        .catch(next)
+})
+
+router.get('/create', (req, res) => {
+    res.render('characters/create-character')
+})
+
+router.get("/:id", (req, res, next) => {
+    axiosLabAPI
+        .getCharacter(req.params.id)
+        .then(responseFromAPI => {
+            res.render("characters/details-character", { character: responseFromAPI.data })
+        })
+        .catch(next)
+})
+
+router.get("/:id/edit", (req, res, next) => {
+    const { id } = req.params
+
+    axiosLabAPI
+        .getCharacter(id)
+        .then(responseFromAPI => {
+            res.render("characters/edit-character", { character: responseFromAPI.data })
+        })
+        .catch(next)
+})
+
+router.get('/:id/delete', (req, res, next) => {
+    axiosLabAPI
+        .deleteCharacter(req.params.id)
+        .then(() => {
+            res.redirect(`/characters/list`);
+        })
+        .catch(next)
 });
 
+//--------------------------------------POST---------------------------------//
 
-router.get("/characters/:id", (req, res, next) => {
-    axios.get(`https://ih-crud-api.herokuapp.com/characters/${req.params.id}`)
-    .then(responseFromAPI => {
-        // console.log("details: ", responseFromAPI.data)
-        res.render("characters/details-character", { character: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+router.post('/create', (req, res, next) => {
 
-module.exports = router;
+    const { name, occupation, debt, weapon } = req.body
+    axiosLabAPI
+        .createCharacter({ name, occupation, debt, weapon })
+        .then(() =>
+            res.redirect('/characters/list')
+        )
+        .catch(next)
+})
 
+router.post('/:id/edit', (req, res, next) => {
+    const { id } = req.params
+    const { name, occupation, weapon } = req.body
 
-// https://ih-crud-api.herokuapp.com/characters
+    axiosLabAPI
+        .editCharacter(id, { name, occupation, weapon })
+        .then(() => {
+            res.redirect(`/characters/${id}`)
+        })
+        .catch(next)
+})
+
+module.exports = router
