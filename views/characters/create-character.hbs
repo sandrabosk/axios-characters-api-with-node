@@ -1,0 +1,20 @@
+<h1>Create Character</h1>
+<form action="/character/create" method="post">
+
+<label for="name">Name</label>
+<input type="text" name="name" id="name">
+
+<label for="occupation">Occupation</label>
+<input type="text" name="occupation" id="occupation">
+
+<label for="weapon">Weapon</label>
+<input type="text" name="weapon" id="weapon">
+
+<label for="debt">Check if in debt. Leave it empty if not in debt</label>
+<input name="debt" type="checkbox" value="true" />
+{{!-- <input name="debt" type="hidden" value="false" /> --}}
+
+<button type="submit">Submit</button>
+
+
+</form>
