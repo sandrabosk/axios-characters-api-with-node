@@ -1,6 +1,12 @@
-<h2>Details of {{ character.name }}</h2>
+<h2>Details of {{ data.name }}</h2>
 
 
-<h3> Occupation: {{ character.occupation }} </h3>
+<h3> Occupation: {{ data.occupation }} </h3>
 
-<p> Weapon: {{ character.weapon }} </p>
+<p> Weapon: {{ data.weapon }} </p>
+
+<a href="/characters/edit/{{data.id}}">Edit character</a>
+
+<form action="/characters/delete/{{data.id}}" method="POST">
+    <input type="submit" value="Delete character" name="delete">
+</form>
