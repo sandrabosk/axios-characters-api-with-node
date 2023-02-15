@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h1>Edit character {{character.name}}</h1>
+        <hr>
+        <form action="/characters/update/{{character.id}}" method="post" class="row g-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{character.name}}">
+            </div>
+            <div class="col-md-6">
+                <label for="occupation" class="form-label">Occupation</label>
+                <input type="text" class="form-control" id="occupation" name="occupation"
+                    value="{{character.occupation}}">
+            </div>
+            <div class="col-6">
+                <label for="debt" class="form-label">Debt</label>
+                <input type="text" class="form-control" id="debt" name="debt" value="{{character.debt}}">
+            </div>
+            <div class="col-6">
+                <label for="weapon" class="form-label">Weapon</label>
+                <input type="text" class="form-control" id="weapon" name="weapon" value="{{character.weapon}}">
+            </div>
+            <div class=" d-grid col-12">
+                <button type="submit" class="btn btn-success">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>
