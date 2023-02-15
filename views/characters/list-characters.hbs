@@ -1,7 +1,32 @@
-<h2> Characters List </h2>
+<div class="container mt-5">
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+    <div class="row">
+
+        {{#each characters}}
+
+        <div class="col-md-3">
+
+            <article class="character-card mb-5">
+
+                <h4>{{name}}</h4>
+
+
+                <div class="d-grid">
+
+                    <div class="btn-group">
+                        <a href="/characters/{{id}}" class="btn btn-dark btn-sm">SEE DETAILS</a>
+                        <a href="/edit/{{id}}" class=" btn btn-warning btn-sm">EDIT CHARACTER</a>
+                        <form action="/delete/{{id}}" method="POST">
+                            <input type="submit" value="DELETE" class="btn btn-dark btn-sm">
+                        </form>
+                    </div>
+                    <hr>
+                </div>
+
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>
