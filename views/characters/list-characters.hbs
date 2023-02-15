@@ -1,7 +1,9 @@
-<h2> Characters List </h2>
-
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+<div class="container mt-4">
+    <h2>Lista de personajes</h2>
+    <hr>
+    <ul>
+        {{#each characters }}
+        <li> <a href="/characters/details/{{id}}" class="personaje"> {{name}} </a></li>
+        {{/each}}
+    </ul>
+</div>
