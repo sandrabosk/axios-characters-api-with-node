@@ -19,10 +19,8 @@ const app = express();
 require("./config")(app);
 
 // default value for title local
-const capitalized = require("./utils/capitalized");
-const projectName = "axios-characters-api";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = 'Characters-API';
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
