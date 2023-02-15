@@ -1,6 +1,13 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container">
 
+    <div class="card" style="width: 18rem;">
+        <li class="list-group-item">Name: {{character.name}}</li>
+        <li class="list-group-item">Occupation: {{character.occupation}}</li>
+        <li class="list-group-item">Role: {{character.weapon}}</li>
+        <a href="/characters/edit/{{character.id}}"> EDIT </a></li>
+        <form action="/characters/delete/{{character.id}}" method="POST">
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+        </form>
 
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+    </div>
+</div>
