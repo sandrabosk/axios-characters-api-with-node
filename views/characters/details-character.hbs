@@ -1,6 +1,14 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container mt-3">
+    <h2>Details of {{ character.name }}</h2>
 
 
-<h3> Occupation: {{ character.occupation }} </h3>
+    <h3> Occupation: {{ character.occupation }} </h3>
 
-<p> Weapon: {{ character.weapon }} </p>
+    <p> Weapon: {{ character.weapon }} </p>
+    <p> Debt: {{ character.debt }} </p>
+
+    <a class="btn btn-dark" href="/characters/{{character.id}}/update">Update</a>
+    <form action="/characters/{{character.id}}/delete" method="post">
+        <input class="btn btn-dark" type="submit" value="Delete">
+    </form>
+</div>
