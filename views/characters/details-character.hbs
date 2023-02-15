@@ -1,6 +1,12 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container mt-5">
 
+    <h1>Details {{character.name}}</h1>
 
-<h3> Occupation: {{ character.occupation }} </h3>
+    <hr>
+    <p>Name: {{character.name}}</p>
+    <p> Occupation: {{character.occupation}}</p>
+    <p>Weapon: {{character.weapon}}</p>
 
-<p> Weapon: {{ character.weapon }} </p>
+    <a href="/characters" class="btn btn-dark">BACK TO CHARACTERS</a>
+
+</div>
