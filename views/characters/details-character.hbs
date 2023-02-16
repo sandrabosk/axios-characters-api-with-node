@@ -1,6 +1,21 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
+            <h2><b>Details of {{ character.name }}</b></h2>
+            <hr>
+            <p> Occupation: {{ character.occupation }}
+            <p>
+                <hr>
+            <p>Weapon: {{ character.weapon }} </p>
 
-<h3> Occupation: {{ character.occupation }} </h3>
+            <hr>
+            <a href="/characters/{{ character.id }}/edit">Edit</a>
+            <hr>
+            <form action="/characters/{{ character.id }}/delete" method="POST">
+                <input class="btn btn-dark" type="submit" value="Delete">
+            </form>
 
-<p> Weapon: {{ character.weapon }} </p>
+        </div>
+    </div>
+</div>
