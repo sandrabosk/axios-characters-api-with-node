@@ -1,7 +1,16 @@
-<h2> Characters List </h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+            <h2> <b>Characters List</b> </h2>
+            <hr>
+            <ol>
+                {{#each characters }}
+                <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+                <hr>
+                {{/each}}
+            </ol>
+
+        </div>
+    </div>
+</div>
