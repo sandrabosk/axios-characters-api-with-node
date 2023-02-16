@@ -1,6 +1,9 @@
-<h2>Details of {{ character.name }}</h2>
+<h2>Details of {{ characters.name }}</h2>
 
 
-<h3> Occupation: {{ character.occupation }} </h3>
+<h3> Occupation: {{ characters.occupation }} </h3>
 
-<p> Weapon: {{ character.weapon }} </p>
+<p> Weapon: {{ characters.weapon }} </p>
+
+<a href="/characters/update/{{characters.id}}" class="btn btn-dark" role="button" data-bs-toggle="button">Update
+    character</a>
