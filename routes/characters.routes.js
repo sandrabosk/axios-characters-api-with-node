@@ -58,7 +58,7 @@ router.get("/characters/:id/edit", (req, res, next) => {
 
 
 
-router.post("/characters/:id/update", (req, res, next) => {
+router.post("/characters/:id/edit", (req, res, next) => {
 
     const { id: character_id } = req.params
     const { name, occupation, weapon } = req.body
@@ -66,10 +66,20 @@ router.post("/characters/:id/update", (req, res, next) => {
 
     charactersApi
         .editCharacter(character_id, { name, occupation, weapon })
-        .then(() => res.redirect("/characters/:id"))
+        .then(() => res.redirect("/characters"))
         .catch(err => next(err))
 })
 
+
+// Delete character
+router.post('/characters/:id/delete', (req, res) => {
+    const { id: character_id } = req.params
+
+    charactersApi
+        .deleteCharacter(character_id)
+        .then(() => res.redirect('/characters'))
+        .catch(err => console.log(err))
+})
 
 
 module.exports = router;
