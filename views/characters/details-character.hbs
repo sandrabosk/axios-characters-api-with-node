@@ -1,6 +1,27 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container">
 
+    <div class="row d-flex justify-content-center">
 
-<h3> Occupation: {{ character.occupation }} </h3>
+        <div class="card col-4">
+            <div class="card-body text-left" style="color: black;">
+                <h3 class="card-title mb-4"><strong>Details of {{ character.name }}</strong></h3>
+                <h5>Occupation: {{ character.occupation }}</h5>
+                <h5>Weapon: {{ character.weapon }}</h5>
 
-<p> Weapon: {{ character.weapon }} </p>
+                <div class="row mt-4">
+                    <div class="col-6 px-1">
+                        <a href="/characters/edit/{{character.id}}" class="btn btn-outline-dark w-100">Edit
+                            characters</a>
+                    </div>
+                    <div class="col-6 px-1">
+                        <form action="/characters/delete/{{character.id}}" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-danger w-100">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
