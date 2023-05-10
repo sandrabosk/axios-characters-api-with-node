@@ -1,7 +1,15 @@
-<h2> Characters List </h2>
+<div class="container">
+    <h1>Characters List</h1>
+    <hr class="mb-3">
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    {{#each characters}}
+
+
+    <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+
+    <hr>
+
     {{/each}}
-</ul>
+
+    <a href="/" class="btn btn-dark">Volver a inicio</a>
+</div>
