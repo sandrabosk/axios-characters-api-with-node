@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h2> Crear Personaje </h2>
+        <hr>
+
+
+        <form action="/create" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name">
+            </div>
+            <div class=" mb-3">
+                <label for="occupation" class="form-label">Occupation:</label>
+                <input type="text" class="form-control" id="occupation" name="occupation">
+            </div>
+            <div class=" mb-3">
+                <label for="weapon" class="form-label">Weapon:</label>
+                <input type="text" class="form-control" id="weapon" name="weapon">
+            </div>
+            <div class=" mb-3">
+                <label for="debt" class="form-label col-12">Debt:</label>
+                <select name="debt" id="debt">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear Personaje</button>
+        </form>
+
+    </div>
+</div>
