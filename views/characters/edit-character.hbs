@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h2> Editar </h2>
+        <hr>
+
+
+        <form action="/characters/{{character.id}}/edit" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name"
+                    value="{{character.name}}">
+            </div>
+            <div class="mb-3">
+                <label for="occupation" class="form-label">Occupation:</label>
+                <input type="text" class="form-control" id="occupation" name="occupation"
+                    value="{{character.occupation}}">
+            </div>
+            <div class="mb-3">
+                <label for="weapon" class="form-label">Weapon:</label>
+                <input type="text" class="form-control" id="weapon" name="weapon" value="{{character.weapon}}">
+            </div>
+            <div class="mb-3">
+                <label for="debt" class="form-label col-12">Debt:</label>
+                <select name="debt" id="debt">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Giuardar cambios</button>
+        </form>
+
+    </div>
+</div>
