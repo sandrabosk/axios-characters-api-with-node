@@ -3,7 +3,7 @@
 require("dotenv/config");
 
 // ℹ️ Connects to the database
-require("./db");
+
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
@@ -19,10 +19,10 @@ const app = express();
 require("./config")(app);
 
 // default value for title local
-const capitalized = require("./utils/capitalized");
+
 const projectName = "axios-characters-api";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = "created with IronLauncher";
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
