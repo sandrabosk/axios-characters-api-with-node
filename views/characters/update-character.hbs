@@ -1,0 +1,47 @@
+<h2>foirmulario para crear person</h2>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h1>EDIT CHARACTER {{character.name}}</h1>
+            <hr>
+            <form action="" method="POST">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">name</label>
+                            <input type="text" value="{{character.name}}" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="occupation" class="form-label">occupation</label>
+                            <input type="text" value="{{character.occupation}}" class="form-control" id="occupation"
+                                name="occupation">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="weapon" class="form-label">weapon</label>
+                    <input type="text" value="{{character.weapon}}" class="form-control" id="weapon" name="weapon">
+                </div>
+
+                <div class="mb-3">
+                    <label for="debt" class="form-label">debt</label>
+                    <input type="text" value="{{character.debt}}" class="form-control" id="debt" name="debt">
+                </div>
+
+
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-dark btn-lg">UPDATE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
