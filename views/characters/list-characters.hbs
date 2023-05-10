@@ -2,6 +2,12 @@
 
 <ul>
     {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    <li> <a href="/characters/{{id}}"> {{ name }} </a>
+        <a href="/characters/{{id}}/edit"> Edit Character </a>
+        <form action="/characters/{{id}}/delete" method="POST" style="display: inline">
+            <input type="submit" value="eliminar" class="btn btn-sm btn-danger">
+        </form>
+    </li>
+
     {{/each}}
 </ul>
