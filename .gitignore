@@ -6,4 +6,5 @@ npm-debug.log
 
 # Environment Variables should NEVER be published
 # pushed on GH for learning purposes
-# .env
+.env
+.DS_Store
