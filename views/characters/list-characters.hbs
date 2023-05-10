@@ -1,7 +1,60 @@
-<h2> Characters List </h2>
+<div class="container mt-5">
+    <div class="inner-pages">
+        <h2> Character List </h2>
+        <hr class="mb-4">
+        <div class=" row">
+            {{#each characters }}
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+            <div class="col-md-4 mb-5">
+                <h4>{{ name }}</h4>
+                <div class="btn-group mr-2" role="group" aria-label="Basic example">
+
+                    <li class="custom-button"> <a class="btn btn-sm btn-secondary" href="/character/{{id}}"> View
+                            Details
+                        </a></li>
+                    <li class="custom-button"> <a class="btn btn-sm btn-warning" href="/character/edit/{{id}}"> Edit
+                        </a></li>
+                    <form action="/characters/delete/{{id}}" method="POST" style="display: inline">
+                        <input type="submit" value="DELETE" class="btn btn-sm btn-danger custom-button delete-button">
+                    </form>
+                </div>
+            </div>
+
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+
+{{!-- <div class="container mt-5">
+
+    <div class="row">
+
+        {{#each characters}}
+
+        <div class="col-md-3">
+
+            <article class="character-card mb-5">
+
+                <h4>{{name}}</h4>
+                <hr>
+                <p>Identificador: {{id}}</p>
+                <p>Profesión: {{occupation}}</p>
+                <p>Arma: {{weapon}}</p>
+
+                <div class="d-grid">
+
+                    <a href="/personajes/detalles/{{id}}" class="btn btn-dark">Ver detalles</a>
+                    <a href="/personajes/editar/{{id}}" class="btn btn-warning">Editar</a>
+
+                </div>
+
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+</div> --}}
