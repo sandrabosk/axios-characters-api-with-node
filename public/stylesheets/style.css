@@ -1,12 +1,19 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.bg-image {
+  background-image: url("../images/ironhack-campus.jpg");
+  background-size: cover;
 }
 
-h1 {
-  color: 15px;
+.bg-image::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.525);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
 }

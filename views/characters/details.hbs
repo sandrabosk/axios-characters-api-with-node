@@ -1,0 +1,41 @@
+<div class="container pt-5 mt-5">
+  <div class="row">
+    <div class="col-3 mx-auto">
+      <div class="card">
+        <img
+          src="https://img.freepik.com/fotos-premium/personaje-3d-blanco_172429-433.jpg?w=2000"
+          class="card-img-top w-50 mx-auto"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold">Detalles de
+            {{character.name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><span
+              class="fw-bold"
+            >Ocupación:</span>{{character.occupation}}
+          </li>
+          <li class="list-group-item"><span
+              class="fw-bold"
+            >Arma:</span>{{character.weapon}}
+          </li>
+        </ul>
+        <div class="card-body mx-auto">
+          <a
+            class="btn btn-warning text-white"
+            href="/editar/{{character.id}}"
+          >Editar</a>
+          <form
+            action="/delete/{{character.id}}"
+            method="POST"
+            style="margin-bottom:0"
+            class="d-inline"
+          >
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
