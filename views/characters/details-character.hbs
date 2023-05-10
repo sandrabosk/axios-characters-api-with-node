@@ -1,6 +1,11 @@
-<h2>Details of {{ character.name }}</h2>
+<div class="container mt-5">
 
-
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+    <div class="inner-pages">
+        <h2 class="mb-5">Details of {{ character.name }}</h2>
+        <p> <strong> Job: </strong>{{ character.occupation }} </p>
+        <p> <strong>Weapon:</strong> {{ character.weapon }} </p>
+        <div class="mt-5">
+            <a href="/characters" class="btn btn-sm btn-secondary"> Back to character list</a>
+        </div>
+    </div>
+</div>
