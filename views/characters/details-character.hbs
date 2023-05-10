@@ -1,6 +1,24 @@
-<h2>Details of {{ character.name }}</h2>
+<h2>Details of </h2>
 
+<div class="row">
 
-<h3> Occupation: {{ character.occupation }} </h3>
+    <div class=" card col-3">
 
-<p> Weapon: {{ character.weapon }} </p>
+        <div class="card-body" style="color: black;">
+            <h2 class="card-title"><strong>{{ character.name }}</strong> </h2>
+            <h4 class="card-title"><strong>Ocupation: </strong> {{ character.occupation }}</h4>
+            <h4 class="card-title"><strong>weapon: </strong> {{ character.weapon }}</h4>
+            <h4 class="card-title"><strong>Deuda: </strong> {{ character.debt }}</h4>
+
+        </div>
+
+        <a href="/characters/{{character.id}}/edit" class="btn btn-md btn-success">Update</a>
+
+        <form action="/characters/{{character.id}}/delete" method="POST">
+            <button type="submit" class="btn btn-md btn-dark"
+                onclick="return confirm('Are you sure you want to delete this Character?')">Delete</button>
+        </form>
+
+    </div>
+
+</div>
