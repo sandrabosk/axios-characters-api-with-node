@@ -1,7 +1,21 @@
-<h2> Characters List </h2>
-
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+<div class="container">
+    <h2>Characters in DataBase</h2>
+    <hr>
+    <div class="row">
+        {{#each characters}}
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <hr>
+                <h5 class="card-title">{{name}}</h5>
+                <a href="/characters/{{id}}">Details</a>
+                <hr>
+                <form action="/characters/{{id}}/delete" method="POST" style="display: inline;">
+                    <input type="submit" value="delete" class="btn btn-sm btn-danger">
+                </form>
+                <a class="btn btn-sm btn-warning" href="/characters/{{id}}/edit">Edit</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <a class="btn btn-dark m-3" href="/">Back to menu</a>
+</div>
