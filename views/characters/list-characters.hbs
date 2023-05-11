@@ -1,7 +1,19 @@
-<h2> Characters List </h2>
+<div class="container">
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+    <h2> Characters List </h2>
+
+    <hr>
+
+    <a href="/create" class="btn btn-dark "> crete character </a>
+
+    <hr>
+
+    <div class="container">
+        <ul>
+            {{#each characters }}
+            <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+            {{/each}}
+        </ul>
+    </div>
+
+</div>
