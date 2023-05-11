@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h1> edit character</h1>
+
+    <hr>
+
+    <div class="container mb-5">
+
+        <form action="/characters/{{character.id}}/edit" method="POST">
+
+            <div class="container mb-3">
+                <label for=""> NAME </label>
+                <input type="text" name="name" value="{{character.name}}">
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> OCCUPATION </label>
+                <input type="text" name="occupation" value="{{character.occupation}}">
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> DEDBT </label>
+                <select name="debt" id="">
+                    <option value="true"> true </option>
+                    <option value="false"> false </option>
+                </select>
+            </div>
+
+            <div class="container mb-3">
+                <label for=""> WEAPON </label>
+                <input type="text" name="weapon" value="{{character.weapon}}">
+            </div>
+
+
+            <div class="container mb-3">
+                <button class="btn btn-dark"> UPDATE </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
