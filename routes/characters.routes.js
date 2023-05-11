@@ -9,7 +9,6 @@ router.get("/characters", (req, res, next) => {
         .catch(err => next(err))
 });
 
-
 router.get("/characters/:id", (req, res, next) => {
     const { id } = req.params
     charactersApiHandler
@@ -57,6 +56,5 @@ router.post('/character/:id/delete', (req, res, next) => {
 
 })
 module.exports = router;
-
 
 // https://ih-crud-api.herokuapp.com/characters

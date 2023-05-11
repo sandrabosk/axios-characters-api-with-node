@@ -21,7 +21,6 @@ class CharacterApiHandler {
     deleteCharacter(characterId) {
         return this.axiosApp.delete(`characters/${characterId}`)
     }
-
 }
 const characterApiHandler = new CharacterApiHandler()
 module.exports = characterApiHandler
