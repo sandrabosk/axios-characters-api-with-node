@@ -1,0 +1,19 @@
+<h2>{{character.name}}</h2>
+
+<form action="/character/edit/{{character.id}}" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="name" value="{{character.name}}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">occupation</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="occupation"
+            value="{{character.occupation}}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">weapon</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="weapon" value="{{character.weapon}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
