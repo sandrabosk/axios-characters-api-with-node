@@ -1,6 +1,28 @@
-<h2>Details of {{ character.name }}</h2>
+<div class='container'>
+  <h2>{{character.name}}</h2>
+  <hr />
 
+  <h3> Occupation: {{character.occupation}} </h3>
 
-<h3> Occupation: {{ character.occupation }} </h3>
+  <p> Weapon: {{character.weapon}} </p>
 
-<p> Weapon: {{ character.weapon }} </p>
+  <hr />
+
+  <div class='row d-flex justify-content-between'>
+
+    <div class='col-1'>
+      <div class='d-grid'>
+        <a href='/characters/list' class='btn btn-info btn-sm'>Back</a>
+      </div>
+    </div>
+
+    <div class='col-1'>
+      <div class='d-grid'>
+        <form action='/characters/{{character.id}}/delete' method='POST'>
+          <button class='btn btn-danger btn-sm' type='submit'>Delete</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
