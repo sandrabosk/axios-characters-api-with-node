@@ -1,7 +1,27 @@
-<h2> Characters List </h2>
+<h2 class="mt-5"> Characters List </h2>
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+<div class="row">
+
+    {{#each characters}}
+
+    <div class="col-md-4">
+
+        <article class="character-card mb-5">
+
+            <h4 class="text-center"><a href="/characters/{{id}}" class="text-decoration-none"> {{ name }} </a></h4>
+
+            <div class="d-grid">
+
+                <div class="btn-group">
+                
+                    <a href="/characters/{{id}}/edit" class=" btn btn-secondary btn-sm">Editar</a>
+                
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
     {{/each}}
-</ul>
+</div>
