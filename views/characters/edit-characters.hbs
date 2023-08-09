@@ -1,0 +1,29 @@
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1>Edit {{character.username}}</h1>
+                <hr>
+                <form action="/edit/{{character.id}}" method="POST">
+                    <div class="mb-3">
+                        <label for="field1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="field1" name="name" value="{{character.name}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="field2" class="form-label">Weapon</label>
+                        <input type="text" class="form-control" id="field2" name="weapon" value="{{character.weapon}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="field3" class="form-label">Occupation</label>
+                        <input type="text" class="form-control" id="field2" name="occupation"
+                            value="{{character.occupation}}">
+                    </div>
+                    <input type="text" name="book_id" hidden value="{{character.id}}">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
