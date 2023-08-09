@@ -1,12 +1,58 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(0, 0, 0);
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
 }
 
-a {
-  color: #00b7ff;
+.goose {
+  width: 100px;
+  height: 100px;
+  background-image: url(../images/goose.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: transform 0.1s ease-in-out;
+  pointer-events: none;
+  transform-origin: center center;
+  z-index: 100;
 }
 
-h1 {
-  color: 15px;
+.navbar {
+  background-color: black;
+}
+
+.hero h1 {
+  font-size: 5em;
+}
+
+.hero p {
+  font-size: 2em;
+}
+
+.character-card {
+  background-color: #000000bb;
+  border-radius: 2%;
+  padding: 10px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.btn-dark {
+  background-color: black;
+}
+
+.btn-info {
+  color: white;
+}
+
+.btn-warning {
+  color: white;
+}
+
+.character-card h4 {
+  margin: 10px 0;
 }
