@@ -1,7 +1,13 @@
 <h2> Characters List </h2>
+{{#each characters }}
+<div class="card text-center mt-4" style="width: 18rem;">
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+    <div class="card-body">
+        <h1 class="card-title">{{name}}</h1>
+        <h4>{{weapon}}</h4>
+        <p class="card-text">{{occupation}}</p>
+        <a href="/characters/{{id}}" class="btn btn-dark">Ver detalles del personaje</a>
+    </div>
+
+</div>
+{{/each}}
