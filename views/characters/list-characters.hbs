@@ -1,7 +1,9 @@
 <h2> Characters List </h2>
 
 <ul>
-    {{#each characters }}
+    <div class="d-flex">
+        {{#each characters }}
         <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
+        {{/each}}
+    </div>
 </ul>
