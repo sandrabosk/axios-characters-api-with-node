@@ -1,6 +1,17 @@
-<h2>Details of {{ character.name }}</h2>
-
-
-<h3> Occupation: {{ character.occupation }} </h3>
-
-<p> Weapon: {{ character.weapon }} </p>
+<div class="card" style="width: 18rem;">
+	<div class="card-body">
+		<h3 class="card-title">{{character.name}}</h3>
+		<h5 class="card-subtitle mb-2 text-body-secondary">{{character.occupation}}</h5>
+		<hr>
+		<p class="card-text">Weapon: {{character.weapon}}</p>
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<a href="/characters/{{character.id}}/edit" class="btn btn-warning d-grid">Edit</a>
+			</div>
+			<form class="col-6" action="/characters/{{character.id}}/delete" method="POST">
+				<input class="btn btn-danger d-grid" type="submit" value="Delete">
+			</form>
+		</div>
+	</div>
+</div>
+<a href="/list" class="btn btn-dark mt-4">Go back</a>

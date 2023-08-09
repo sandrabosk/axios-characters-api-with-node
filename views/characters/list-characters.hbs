@@ -1,7 +1,11 @@
-<h2> Characters List </h2>
-
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+<div class="row justify-content-center">
+	<div class="col-10">
+		<h2> Characters List </h2>
+		<div id="list-example" class="list-group mt-4">
+			{{#each characters }}
+			<a class="list-group-item list-group-item-action" href="/characters/{{id}}">{{name}}</a>
+			{{/each}}
+		</div>
+		<a href="/character/create" class="btn btn-success mt-4">Add new one</a>
+	</div>
+</div>
