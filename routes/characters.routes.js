@@ -1,27 +1,25 @@
-const router = require("express").Router();
-const axios = require("axios");
+const router = require('express').Router()
 
-/* GET home page */
-router.get("/characters", (req, res, next) => {
-    axios.get("https://ih-crud-api.herokuapp.com/characters")
-    .then(responseFromAPI => {
-        // console.log(responseFromAPI)
-        res.render("characters/list-characters", { characters: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+const {
+	list,
+	getOne,
+	createForm,
+	create,
+	editForm,
+	update,
+	deleteController,
+} = require('../controllers/characters.controllers')
 
+router.get('/list', list)
 
-router.get("/characters/:id", (req, res, next) => {
-    axios.get(`https://ih-crud-api.herokuapp.com/characters/${req.params.id}`)
-    .then(responseFromAPI => {
-        // console.log("details: ", responseFromAPI.data)
-        res.render("characters/details-character", { character: responseFromAPI.data });
-    })
-    .catch(err => console.error(err))
-});
+router.get('/characters/:id', getOne)
 
-module.exports = router;
+router.get('/character/create', createForm)
+router.post('/character/create', create)
 
+router.get('/characters/:id/edit', editForm)
+router.post('/characters/:id/update', update)
 
-// https://ih-crud-api.herokuapp.com/characters
+router.post('/characters/:id/delete', deleteController)
+
+module.exports = router
