@@ -11,7 +11,19 @@ router.get("/characters-list", (req, res, next) => {
         })
         .catch(err => next(err))
 });
+router.get('/characters/create', (req, res) => {
+    res.render('characters/create-character')
+})
 
+router.post('/characters/create', (req, res, next) => {
+    const { name, occupation, weapon, debt = "false" } = req.body
+    const newCharacter = { name, occupation, weapon, debt }
+
+    charactersApi
+        .saveCharacter(newCharacter)
+        .then(() => res.redirect('/characters-list'))
+        .catch(err => next(err))
+})
 
 router.get("/characters/:id", (req, res, next) => {
     const { id: characterId } = req.params
@@ -37,19 +49,7 @@ router.get('/characters/:id/edit', (req, res) => {
         })
 })
 
-router.get('/create', (req, res) => {
-    res.render('characters/create-character')
-})
 
-router.post('/create', (req, res, next) => {
-    const { name, occupation, weapon, debt = "false" } = req.body
-    const newCharacter = { name, occupation, weapon, debt }
-
-    charactersApi
-        .saveCharacter(newCharacter)
-        .then(() => res.redirect('/characters-list'))
-        .catch(err => next(err))
-})
 
 router.post('/characters/:id/update', (req, res, next) => {
     const { id: characterID } = req.params
