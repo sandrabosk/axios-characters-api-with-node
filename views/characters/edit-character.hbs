@@ -1,0 +1,38 @@
+<h2>UPDATE {{character.name}}</h2>
+
+<div class="row">
+    <form action="/characters/{{character.id}}/update" method="post">
+        <div class="col-3 mb-3 d-grid">
+            <label for="name"></label>
+            <input type="text" placeholder="Character name" name="name" id="name" value="{{character.name}}">
+        </div>
+
+        <div class="col-3 mb-3 d-grid"><label for="occupation"></label>
+            <input type="text" name="occupation" placeholder="Character occupation" id="occupation"
+                value="{{character.occupation}}">
+        </div>
+
+        <div class="col-3 mb-3 d-grid"><label for="weapon"></label>
+            <input type="text" name="weapon" placeholder="Character weapon" id="weapon" value="{{character.weapon}}">
+        </div>
+
+        {{#if character.selectDebt}}
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" value="true" id="flexSwitchCheckDefault" name="debt"
+                checked>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Debt</label>
+        </div>
+        {{/if}}
+
+        {{#unless character.selectDebt}}
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" value="true" id="flexSwitchCheckDefault" name="debt">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Debt</label>
+        </div>
+        {{/unless}}
+
+
+        <button class="btn btn-info" type="submit">Confirm Edit</button>
+
+    </form>
+</div>
