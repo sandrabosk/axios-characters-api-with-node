@@ -1,0 +1,34 @@
+<div>
+    <div>
+        <div>
+            <h1>Editar {{character.name}}</h1>
+            <hr>
+            <form action="/characters/{{character.id}}/edit/" method="POST">
+                <div>
+                    <div>
+                        <div>
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" value="{{character.name}}">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="weapon">Arma</label>
+                            <input type="text" id="weapon" name="weapon" value="{{character.weapon}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="occupation">Profesión</label>
+                    <input type="text" id="occupation" name="occupation" value="{{character.occupation}}">
+                </div>
+
+                <div>
+                    <button type="submit">Guardar edición</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
