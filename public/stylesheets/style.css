@@ -9,3 +9,10 @@ a {
 h1 {
   color: 15px;
 }
+
+#error {
+	background: rgb(239, 151, 151);
+	border: 1px solid red;
+	padding: 8px;
+	border-radius: 3px;
+}

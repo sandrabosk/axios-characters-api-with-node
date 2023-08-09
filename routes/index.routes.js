@@ -1,8 +1,8 @@
-const router = require("express").Router();
+const router = require('express').Router()
+
+const { listCount } = require('../controllers/characters.controllers')
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("index");
-});
+router.get('/', listCount)
 
-module.exports = router;
+module.exports = router

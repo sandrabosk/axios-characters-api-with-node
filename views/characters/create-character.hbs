@@ -14,6 +14,9 @@
 				<label for="weaponInput" class="form-label">Weapon</label>
 				<input type="text" class="form-control" id="weaponInput" name="weapon">
 			</div>
+			{{#if errorMsg}}
+			<p id="error">{{errorMsg}}</p>
+			{{/if}}
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</div>
