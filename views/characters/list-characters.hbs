@@ -1,7 +1,10 @@
-<h2> Characters List </h2>
-
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+<div class="container mt-5">
+    <h2 class="mb-4">Characters List</h2>
+    <ul class="list-group">
+        {{#each characters }}
+        <li class="list-group-item">
+            <a href="/characters/{{id}}" class="text-decoration-none">{{ name }}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
