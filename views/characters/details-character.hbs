@@ -1,6 +1,31 @@
 <h2>Details of {{ character.name }}</h2>
 
+<div class="row">
+    <div class="col-6 mt-3">
+        <h5> Occupation: {{ character.occupation }} </h5>
+    </div>
+</div>
 
-<h3> Occupation: {{ character.occupation }} </h3>
+<div class="row">
+    <div class="col-6 mt-3">
+        <h5> Weapon: {{ character.weapon }} </h5>
+    </div>
+</div>
 
-<p> Weapon: {{ character.weapon }} </p>
+<div class="row">
+    <div class="col-6 mt-3">
+        <h5> Debt: {{character.debt}} </h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-1">
+        <a href="/characters/{{character.id}}/edit" class="btn btn-info mb-3 mt-3">Edit</a>
+    </div>
+
+    <div class="col-1">
+        <form action="/characters/{{character.id}}/delete" method="POST">
+            <button class="btn btn-danger mb-3 mt-3" type="submit">Delete</button>
+        </form>
+    </div>
+</div>
