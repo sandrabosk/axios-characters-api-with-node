@@ -24,6 +24,10 @@ class CharactersApiHandler {
         return this.axiosApp.put(`/characters/${character_id}`, character_data)
     }
 
+    deleteCharacter(character_id) {
+        return this.axiosApp.delete(`character/${character_id}`)
+    }
+
 
 }
 

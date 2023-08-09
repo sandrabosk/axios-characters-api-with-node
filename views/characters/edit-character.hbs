@@ -5,25 +5,27 @@
 
             <h1>Edit {{character.name}}</h1>
             <hr>
-            <form action="/characters/edit/{{character.id}}" method="POST">
+            <form action="/characters/{{character.id}}/edit" method="POST">
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{name}}">
+                            <input type="text" class="form-control" id="name" name="name" value="{{character.name}}">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="weapon" class="form-label">Arma</label>
-                            <input type="text" class="form-control" id="weapon" name="weapon" value="{{weapon}}">
+                            <input type="text" class="form-control" id="weapon" name="weapon"
+                                value="{{character.weapon}}">
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="occupation" class="form-label">Profesión</label>
-                    <input type="text" class="form-control" id="occupation" name="occupation" value="{{occupation}}">
+                    <input type="text" class="form-control" id="occupation" name="occupation"
+                        value="{{character.occupation}}">
                 </div>
 
                 <div class="d-grid mt-5">
