@@ -1,7 +1,17 @@
-<h2> Characters List </h2>
-
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+<h1> Characters List </h1>
+<hr>
+<table class="table">
+    <tbody>
+        {{#each characters }}
+        <tr>
+            <td><a href="/characters/{{id}}"> {{ name }} </a></td>
+            <td> <a href="/characters/{{id}}/edit" class="btn btn-warning">Edit</a></td>
+            <td>
+                <form action="/characters/{{id}}/delete" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
