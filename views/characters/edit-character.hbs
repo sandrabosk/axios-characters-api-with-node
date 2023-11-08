@@ -1,0 +1,42 @@
+<div class="container">
+
+    <h2>Edit the character</h2>
+    <div class="row">
+
+        <form action="/edit/{{character.id}}" method="POST">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{character.name}}">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="occupation" class="form-label">Occupation</label>
+                        <input type="text" class="form-control" id="occupation" name="occupation"
+                            value="{{character.occupation}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="weapon" class="form-label">Weapon</label>
+                <input type="text" class="form-control" id="weapon" name="weapon" value="{{character.weapon}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="debt" class="form-label">Debt</label>
+                <select id="debt" class="form-select" name="debt" value="{{character.debt}}">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="d-grid mt-5">
+                <button type="submit" class="btn btn-dark btn-lg">Editar personaje</button>
+            </div>
+        </form>
+    </div>
+
+</div>
