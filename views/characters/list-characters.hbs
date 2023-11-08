@@ -1,7 +1,29 @@
-<h2> Characters List </h2>
+<div class="container">
+    <h1>Characters List</h1>
+    <hr>
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+    <table class="table">
+
+        <tbody>
+
+            {{#each characters}}
+
+            <tr>
+
+                <td>
+                    <h4>{{name}}</h4>
+                </td>
+
+                <td>
+                    <a href="/characters/{{id}}" class="btn btn-warning btn-sm">Ver Detalles</a>
+                </td>
+
+            </tr>
+
+            {{/each}}
+
+        </tbody>
+
+    </table>
+    <a href="/crear" class="btn btn-dark btn-sm">Crear Personaje</a>
+</div>
