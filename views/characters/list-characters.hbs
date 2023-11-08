@@ -2,6 +2,12 @@
 
 <ul>
     {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    <li style="font-size: 24px;"> <a href="/characters/{{id}}"> {{ name }} </a></li>
+    <a href="/characters/{{id}}" class="btn btn-primary btn-sm">View details</a>
+    <a href="/characters/{{id}}/edit" class="btn btn-secondary btn-sm">Edit</a>
+    <a href="/characters/{{id}}/delete" class="btn btn-danger btn-sm">Delete</a>
+
     {{/each}}
+
+
 </ul>
