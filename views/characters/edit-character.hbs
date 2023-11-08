@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-6">
+            <form action="/characters/edit/{{id}}" method="post">
+                <div class="form-group mb-3">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value="{{name}}">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Ocupation</label>
+                    <input type="text" class="form-control" name="occupation" value="{{occupation}}">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Weapon</label>
+                    <input type="text" class="form-control" name="weapon" value="{{weapon}}">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-dark" type="submit">Submit changes</button>
+                    <a href="/characters" class="btn btn-outline-dark">Back to list</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
