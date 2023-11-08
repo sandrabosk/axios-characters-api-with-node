@@ -1,7 +1,11 @@
 <h2> Characters List </h2>
 
-<ul>
-    {{#each characters }}
-        <li> <a href="/characters/{{id}}"> {{ name }} </a></li>
-    {{/each}}
-</ul>
+
+<div class="row"></div>
+{{#each characters }}
+<div class="col-md-4">
+    <a href="/characters/{{id}}"> {{ name }} </a> | <a href="/characters/{{id}}/edit">editar</a>
+</div>
+
+{{/each}}
+</div>
