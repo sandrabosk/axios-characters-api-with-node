@@ -13,6 +13,21 @@ router.get("/", (req, res, next) => {
         .catch(err => next(err))
 
 })
+router.get('/crear', (req, res, next) => {
+    res.render('characters/create-character')
+})
+
+router.post('/crear', (req, res, next) => {
+
+    const { name, occupation, weapon } = req.body
+
+    const character_data = { name, occupation, weapon }
+
+    charactersService
+        .saveCharacter(character_data)
+        .then(() => res.redirect('/characters'))
+        .catch(err => next(err))
+})
 
 router.get('/:id', (req, res, next) => {
 
@@ -26,21 +41,6 @@ router.get('/:id', (req, res, next) => {
 
 
 
-router.get('/crear', (req, res, next) => {
-    res.render('characters/create-character')
-})
-
-router.post('/crear', (req, res, next) => {
-
-    const { name, occupation, weapon } = req.body
-
-    const character_data = { name, occupation, weapon}
-
-    charactersService
-        .saveCharacter(character_data)
-        .then(() => res.redirect('/characters'))
-        .catch(err => next(err))
-})
 
 
 
