@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    console.log("axios-characters-api JS imported successfully!");
+    console.log("axios-characters-api JS imported successfully!")
   },
   false
-);
+)
