@@ -3,10 +3,57 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.index {
+  height: 50rem;
+  background-image: url("https://i.pinimg.com/564x/06/0d/82/060d82753023f3e5c55451e4c51776ed.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list{
+  padding: 1rem;
+  height: 50rem;
+  background-image: url("https://i.pinimg.com/564x/1d/05/89/1d05899587df4010d81aa71fa07afec2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.create {
+  padding: 1rem;
+  height: 50rem;
+  background-image: url("https://i.pinimg.com/564x/bf/d0/44/bfd04464734e97b746da69228bc7bdba.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.details {
+  padding: 1rem;
+  height: 50rem;
+  background-image: url("https://i.pinimg.com/564x/8c/d7/75/8cd775ad3890664f6a1681c832d6f9de.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.edit {
+  padding: 1rem;
+  height: 50rem;
+  background-image: url("https://i.pinimg.com/564x/06/41/42/064142edc77c6ebaa0c8eb3a1905f81a.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a{
+  text-decoration: none;
+  color: black
 }
 
 h1 {
   color: 15px;
+}
+
+form {
+  width: 100%;
 }
