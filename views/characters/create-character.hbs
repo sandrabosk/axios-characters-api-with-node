@@ -1,0 +1,15 @@
+<div class="text create">
+    <h2>Create a new character</h2>
+    <form action="/characters/create" method="post">
+    <label for="name">Name</label>
+    <input id="name" type="name" name="name">
+
+    <label for="occupation" class="form-label">Occupation</label>
+    <input type="text" id="occupation" name="occupation" value="{{character.occupation}}">
+    
+    <label for="weapon" class="form-label">Weapon</label>
+    <input type="text" id="weapon" name="weapon" value="{{character.weapon}}">
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
